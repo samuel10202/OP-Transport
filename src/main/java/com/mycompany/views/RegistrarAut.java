@@ -13,23 +13,23 @@ import java.awt.Color;
  * @author pes20
  */
 public class RegistrarAut extends javax.swing.JPanel {
-    
+
     boolean isEdition = false;
     com.mycompany.models.Autobuses autobusEdition;
-    
+
     public RegistrarAut() {
         initComponents();
         InitStyles();
     }
-    
-    public RegistrarAut(com.mycompany.models.Autobuses autobus){
+
+    public RegistrarAut(com.mycompany.models.Autobuses autobus) {
         initComponents();
         isEdition = true;
         autobusEdition = autobus;
         InitStyles();
     }
-    
-    private void InitStyles(){
+
+    private void InitStyles() {
         title.putClientProperty("FlatLaf.style", "font: bold $h3.regular.font");
         title.setForeground(Color.black);
         marcaTxt.putClientProperty("JTextField.placeholderText", "Ingrese la marca del autobus.");
@@ -38,21 +38,21 @@ public class RegistrarAut extends javax.swing.JPanel {
         plazas_dispTxt.putClientProperty("JTextField.placeholderText", "Ingrese las plazas disponibles.");
         placaTxt.putClientProperty("JTextField.placeholderText", "Ingrese la placa del autobus.");
         kilomeTxt.putClientProperty("JTextField.placeholderText", "Ingrese el kilometraje del autobus.");
-        
-        if(isEdition){
+
+        if (isEdition) {
             title.setText("Editar autobus");
             button.setText("Guardar");
-            
-            if(autobusEdition != null){
+
+            if (autobusEdition != null) {
                 marcaTxt.setText(autobusEdition.getMarca());
                 modeloTxt.setText(autobusEdition.getModelo());
                 añofabTxt.setText(autobusEdition.getAño_fabricacion());
                 plazas_dispTxt.setText(String.valueOf(autobusEdition.getPlazas_disponibles()));
                 placaTxt.setText(autobusEdition.getPlaca());
                 kilomeTxt.setText(String.valueOf(autobusEdition.getKilometraje()));
-                
+
             }
-        }    
+        }
     }
 
     /**
@@ -260,7 +260,7 @@ public class RegistrarAut extends javax.swing.JPanel {
         autobus.setPlaca(plac);
         autobus.setKilometraje(klm);
 
-        try {
+        /*try {
             DAOAutobuses dao = new DAOAutobusesimpl();
             if (!isEdition) {
                 dao.registrar(autobus);
@@ -269,17 +269,51 @@ public class RegistrarAut extends javax.swing.JPanel {
             }
             String succesMsg = isEdition ? "modificado" : "registrado";
             javax.swing.JOptionPane.showMessageDialog(this, "Autobus " + succesMsg + " correctamente \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            if(!isEdition){
+            if (!isEdition) {
                 marcaTxt.setText("");
                 modeloTxt.setText("");
                 añofabTxt.setText("");
                 plazas_dispTxt.setText("");
                 placaTxt.setText("");
                 kilomeTxt.setText("");
-            }    
+            }
         } catch (Exception e) {
             String errorMsg = isEdition ? "modificar" : "registrar";
             javax.swing.JOptionPane.showConfirmDialog(this, "Ocurrio un error " + errorMsg + " al autobus. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+            System.out.println(e.getMessage());
+        }*/
+        try {
+            DAOAutobuses dao = new DAOAutobusesimpl();
+
+            // Si se está editando, modificar el autobús existente
+            if (isEdition) {
+                dao.modificar(autobus);
+                javax.swing.JOptionPane.showMessageDialog(this, "Autobús modificado correctamente.\n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                // Si no se está editando, verificar si ya existe un autobús con la misma placa
+                com.mycompany.models.Autobuses existingAutobus = dao.getAutobusByPlaca(plac);
+                if (existingAutobus != null) {
+                    javax.swing.JOptionPane.showMessageDialog(this, "Ya existe un autobús con esta placa.\n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+                    return; // Salir del método si ya existe un autobús con la misma placa
+                } else {
+                    // Si no existe un autobús con la misma placa, registrar el nuevo autobús
+                    dao.registrar(autobus);
+                    javax.swing.JOptionPane.showMessageDialog(this, "Autobús registrado correctamente.\n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+
+            // Limpiar los campos después del registro exitoso
+            if (!isEdition) {
+                marcaTxt.setText("");
+                modeloTxt.setText("");
+                añofabTxt.setText("");
+                plazas_dispTxt.setText("");
+                placaTxt.setText("");
+                kilomeTxt.setText("");
+            }
+        } catch (Exception e) {
+            String errorMsg = isEdition ? "modificar" : "registrar";
+            javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un error al " + errorMsg + " el autobús.\n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
             System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_buttonActionPerformed

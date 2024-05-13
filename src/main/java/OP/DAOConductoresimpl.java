@@ -78,7 +78,7 @@ public class DAOConductoresimpl extends Database implements DAOConductores {
         List<Conductores> lista = null;
         try {
             this.Conectar();
-            String Query  = nombre.isEmpty() ? "SELECT * FROM conductores;" : "SELECT * FROM conductores WHERE nombre LIKE '%" + nombre + "%';";
+            String Query = nombre.isEmpty() ? "SELECT * FROM conductores;" : "SELECT * FROM conductores WHERE nombre LIKE '%" + nombre + "%';";
             PreparedStatement st = this.conexion.prepareStatement(Query);
 
             lista = new ArrayList();
@@ -117,6 +117,37 @@ public class DAOConductoresimpl extends Database implements DAOConductores {
             st.setInt(1, conductorId);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
+                conductor.setId(rs.getInt("id"));
+                conductor.setNombres(rs.getString("nombre"));
+                conductor.setApellidos(rs.getString("apellido"));
+                conductor.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
+                conductor.setTelefono(rs.getInt("telefono"));
+                conductor.setDireccion(rs.getString("direccion"));
+                conductor.setGenero(rs.getString("genero"));
+                conductor.setLicencia(rs.getInt("licencia"));
+                conductor.setFecha_expeLicen(rs.getString("lic_expe"));
+                conductor.setFecha_vencLicen(rs.getString("lic_venc"));
+            }
+            rs.close();
+            st.close();
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.Cerrar();
+        }
+        return conductor;
+    }
+
+    @Override
+    public Conductores getConductorByCC(int CC) throws Exception {
+        Conductores conductor = null;
+        try {
+            this.Conectar();
+            PreparedStatement st = this.conexion.prepareStatement("SELECT * FROM conductores WHERE cc = ? LIMIT 1;");
+            st.setInt(1, CC);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                conductor = new Conductores();
                 conductor.setId(rs.getInt("id"));
                 conductor.setNombres(rs.getString("nombre"));
                 conductor.setApellidos(rs.getString("apellido"));

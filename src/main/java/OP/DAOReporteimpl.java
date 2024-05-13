@@ -33,13 +33,13 @@ public class DAOReporteimpl extends Database implements DAOReporte {
     public void modificar(Reporte reporte) throws Exception {
         try {
             this.Conectar();
-            PreparedStatement st = this.conexion.prepareStatement("UPDATE reporte SET id_cond = ?, id_autobus = ?, ruta = ?, fecha_salida = ?, fecha_entrada = ?, dinero_recolectado = ? WHERE id = ?;");
-            st.setInt(1, reporte.getCond_id());
-            st.setInt(2, reporte.getAut_id());
-            st.setString(3, reporte.getRuta());
-            st.setString(4, reporte.getDate_out());
-            st.setString(5, reporte.getDate_return());
-            st.setInt(6, reporte.getDinero_recogido());
+            PreparedStatement st = this.conexion.prepareStatement("UPDATE reporte SET fecha_entrada = ?, dinero_recolectado = ? WHERE id_cond = ? AND id_autobus = ? AND ruta = ? AND fecha_entrada IS NULL ORDER BY id DESC LIMIT 1;");
+            st.setString(1, reporte.getDate_return());
+            st.setInt(2, reporte.getDinero_recogido());
+            st.setInt(3, reporte.getCond_id());
+            st.setInt(4, reporte.getAut_id());
+            st.setString(5, reporte.getRuta());
+            st.setString(6, reporte.getDate_out());
             st.setInt(7, reporte.getId());
             st.executeUpdate();
             st.close();
