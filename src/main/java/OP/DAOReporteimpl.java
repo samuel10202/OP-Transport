@@ -37,10 +37,10 @@ public class DAOReporteimpl extends Database implements DAOReporte {
             st.setInt(1, reporte.getCond_id());
             st.setInt(2, reporte.getAut_id());
             st.setString(3, reporte.getRuta());
-            st.setString(3, reporte.getDate_out());
-            st.setString(4, reporte.getDate_return());
-            st.setInt(5, reporte.getDinero_recogido());
-            st.setInt(6, reporte.getId());
+            st.setString(4, reporte.getDate_out());
+            st.setString(5, reporte.getDate_return());
+            st.setInt(6, reporte.getDinero_recogido());
+            st.setInt(7, reporte.getId());
             st.executeUpdate();
             st.close();
         } catch (Exception e) {

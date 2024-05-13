@@ -8,7 +8,6 @@ import com.mycompany.interfaces.DAOAutobuses;
 import com.mycompany.interfaces.DAOConductores;
 import com.mycompany.interfaces.DAOReporte;
 import Utils.Utils;
-import java.util.Date;
 
 public class RegistrarE extends javax.swing.JPanel {
 
@@ -21,12 +20,19 @@ public class RegistrarE extends javax.swing.JPanel {
     }
 
     private void InitStyles() {
+        title.putClientProperty("FlatLaf.style", "font: bold $h3.regular.font");
+        title.setForeground(Color.black);
         regE.setForeground(Color.white);
         regE.putClientProperty("FlatLaf.style", "font:14 $semibold.font");
-        idaut.putClientProperty("FlatLaf.styleClass", "large");
-        idaut.setForeground(Color.black);
         idcond.putClientProperty("FlatLaf.styleClass", "large");
         idcond.setForeground(Color.black);
+        dine.putClientProperty("FlatLaf.styleClass", "large");
+        dine.setForeground(Color.black);
+        idaut.putClientProperty("FlatLaf.styleClass", "large");
+        idaut.setForeground(Color.black);
+        idcondTxt.putClientProperty("JTextField.placeholderText", "Ingrese el ID del conductor");
+        idautTxt.putClientProperty("JTextField.placeholderText", "Ingrese el ID del autobus");
+        dinTxt.putClientProperty("JTextField.placeholderText", "Ingrese el dinero recolectado");
     }
 
     /**
@@ -47,6 +53,7 @@ public class RegistrarE extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         dine = new javax.swing.JLabel();
         dinTxt = new javax.swing.JTextField();
+        title = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setPreferredSize(new java.awt.Dimension(576, 410));
@@ -55,7 +62,6 @@ public class RegistrarE extends javax.swing.JPanel {
         idcond.setText("ID Conductor");
 
         idautTxt.setBackground(new java.awt.Color(255, 255, 255));
-        idautTxt.setText("jTextField1");
 
         idaut.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         idaut.setText("ID Autobus");
@@ -71,7 +77,6 @@ public class RegistrarE extends javax.swing.JPanel {
         });
 
         idcondTxt.setBackground(new java.awt.Color(255, 255, 255));
-        idcondTxt.setText("jTextField1");
 
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
@@ -79,7 +84,8 @@ public class RegistrarE extends javax.swing.JPanel {
         dine.setText("Dinero recaudado");
 
         dinTxt.setBackground(new java.awt.Color(255, 255, 255));
-        dinTxt.setText("jTextField1");
+
+        title.setText("Registrar Entrada");
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -101,11 +107,16 @@ public class RegistrarE extends javax.swing.JPanel {
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(regE, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGroup(bgLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(title))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addContainerGap()
+                .addComponent(title)
+                .addGap(58, 58, 58)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
@@ -294,5 +305,6 @@ public class RegistrarE extends javax.swing.JPanel {
     private javax.swing.JTextField idcondTxt;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton regE;
+    private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }

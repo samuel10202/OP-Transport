@@ -21,8 +21,10 @@ public class Buses extends javax.swing.JPanel {
     private void InitStyles() {
         title.putClientProperty("FlatLaf.style", "font: bold $h3.regular.font");
         title.setForeground(Color.black);
+        autSearch.putClientProperty("JTextField.placeholderText", "Ingrese el autobus a buscar");
+
     }
-    
+
     private void LoadAutobuses() {
         try {
             DAOAutobuses dao = new DAOAutobusesimpl();

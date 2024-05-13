@@ -29,13 +29,15 @@ public class Conductores extends javax.swing.JPanel {
     private void InitStyles() {
         title.putClientProperty("FlatLaf.style", "font: bold $h3.regular.font");
         title.setForeground(Color.black);
+        conSearch.putClientProperty("JTextField.placeholderText", "Ingrese el conductor a buscar");
+
     }
 
     private void LoadConductores() {
         try {
             DAOConductores dao = new DAOConductoresimpl();
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-            dao.listar("").forEach((u) -> model.addRow(new Object[]{u.getId(),u.getCc(), u.getNombres(), u.getApellidos(), u.getFecha_nacimiento(), u.getTelefono(), u.getDireccion(), u.getGenero(), u.getLicencia(), u.getFecha_expeLicen(), u.getFecha_vencLicen()}));
+            dao.listar("").forEach((u) -> model.addRow(new Object[]{u.getId(), u.getCc(), u.getNombres(), u.getApellidos(), u.getFecha_nacimiento(), u.getTelefono(), u.getDireccion(), u.getGenero(), u.getLicencia(), u.getFecha_expeLicen(), u.getFecha_vencLicen()}));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -52,7 +54,7 @@ public class Conductores extends javax.swing.JPanel {
 
         bg = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
-        userSearch = new javax.swing.JTextField();
+        conSearch = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -65,9 +67,9 @@ public class Conductores extends javax.swing.JPanel {
 
         title.setText("Conductores");
 
-        userSearch.addActionListener(new java.awt.event.ActionListener() {
+        conSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userSearchActionPerformed(evt);
+                conSearchActionPerformed(evt);
             }
         });
 
@@ -173,7 +175,7 @@ public class Conductores extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(userSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(conSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22)
                         .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(bgLayout.createSequentialGroup()
@@ -197,7 +199,7 @@ public class Conductores extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(userSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(conSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,11 +225,11 @@ public class Conductores extends javax.swing.JPanel {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         try {
-            String conductorBuscar = userSearch.getText();
+            String conductorBuscar = conSearch.getText();
             DAOConductores dao = new DAOConductoresimpl();
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             model.setRowCount(0);
-            dao.listar(conductorBuscar).forEach((u) -> model.addRow(new Object[]{u.getId(),u.getCc(), u.getNombres(), u.getApellidos(), u.getFecha_nacimiento(), u.getTelefono(), u.getDireccion(), u.getGenero(), u.getLicencia(), u.getFecha_expeLicen(), u.getFecha_vencLicen()}));
+            dao.listar(conductorBuscar).forEach((u) -> model.addRow(new Object[]{u.getId(), u.getCc(), u.getNombres(), u.getApellidos(), u.getFecha_nacimiento(), u.getTelefono(), u.getDireccion(), u.getGenero(), u.getLicencia(), u.getFecha_expeLicen(), u.getFecha_vencLicen()}));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -275,20 +277,20 @@ public class Conductores extends javax.swing.JPanel {
         Dashboard.ShowJPanel(new RegistrarCon());
     }//GEN-LAST:event_addButtonActionPerformed
 
-    private void userSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userSearchActionPerformed
+    private void conSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_userSearchActionPerformed
+    }//GEN-LAST:event_conSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JPanel bg;
+    private javax.swing.JTextField conSearch;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton editButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton searchButton;
     private javax.swing.JLabel title;
-    private javax.swing.JTextField userSearch;
     // End of variables declaration//GEN-END:variables
 }
