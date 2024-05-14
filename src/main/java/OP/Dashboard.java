@@ -25,6 +25,7 @@ public class Dashboard extends javax.swing.JFrame {
         InitStyles();
         SetDate();
         InitContent();
+        setResizable(false);
     }
 
     private void InitStyles() {
