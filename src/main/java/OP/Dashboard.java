@@ -11,15 +11,9 @@ import java.util.Locale;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
-/**
- *
- * @author pes20
- */
+
 public class Dashboard extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Dashboard
-     */
     public Dashboard() {
         initComponents();
         InitStyles();
