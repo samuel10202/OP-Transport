@@ -26,13 +26,10 @@ public class RegistrarS extends javax.swing.JPanel {
         regS.putClientProperty("FlatLaf.style", "font:14 $semibold.font");
         idcond.putClientProperty("FlatLaf.styleClass", "large");
         idcond.setForeground(Color.black);
-        ruta.putClientProperty("FlatLaf.styleClass", "large");
-        ruta.setForeground(Color.black);
         idaut.putClientProperty("FlatLaf.styleClass", "large");
         idaut.setForeground(Color.black);
         idconTxt.putClientProperty("JTextField.placeholderText", "Ingrese el ID del conductor");
         idautTxt.putClientProperty("JTextField.placeholderText", "Ingrese el ID del autobus");
-        rutaTxt.putClientProperty("JTextField.placeholderText", "Ingrese la ruta");
 
     }
 
@@ -48,12 +45,10 @@ public class RegistrarS extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         idcond = new javax.swing.JLabel();
         regS = new javax.swing.JButton();
-        rutaTxt = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         idautTxt = new javax.swing.JTextField();
         idaut = new javax.swing.JLabel();
         idconTxt = new javax.swing.JTextField();
-        ruta = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
@@ -72,8 +67,6 @@ public class RegistrarS extends javax.swing.JPanel {
             }
         });
 
-        rutaTxt.setBackground(new java.awt.Color(255, 255, 255));
-
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -89,9 +82,6 @@ public class RegistrarS extends javax.swing.JPanel {
             }
         });
 
-        ruta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        ruta.setText("Ruta");
-
         title.setText("Registrar Salida");
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
@@ -101,52 +91,48 @@ public class RegistrarS extends javax.swing.JPanel {
             .addGroup(bgLayout.createSequentialGroup()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(title))
+                    .addGroup(bgLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(idaut, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(idautTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(idcond, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(idconTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(regS, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ruta, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rutaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(title)))
-                .addContainerGap())
+                            .addComponent(idconTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(38, 38, 38)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(idaut, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idautTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                .addComponent(regS, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(201, 201, 201))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(title)
-                .addGap(58, 58, 58)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(title)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(96, 96, 96)
+                                .addComponent(idcond)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idconTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(idaut)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idautTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addComponent(idcond)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(idconTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addComponent(idaut)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(idautTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(ruta)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rutaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74)
-                        .addComponent(regS, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(regS, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -169,17 +155,14 @@ public class RegistrarS extends javax.swing.JPanel {
 
         String id_cond = idconTxt.getText();
         String id_aut = idautTxt.getText();
-        String ruta = rutaTxt.getText(); // Agregar la lectura del campo de texto de la ruta
 
         // Validaciones para los campos
-        if (id_cond.isEmpty() || id_aut.isEmpty() || ruta.isEmpty()) {
+        if (id_cond.isEmpty() || id_aut.isEmpty()) {
             javax.swing.JOptionPane.showMessageDialog(this, "Debe llenar todos los campos. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
             if (id_cond.isEmpty()) {
                 idconTxt.requestFocus();
-            } else if (id_aut.isEmpty()) {
-                idautTxt.requestFocus();
             } else {
-                rutaTxt.requestFocus();
+                idautTxt.requestFocus();
             }
             return;
         } else if (!Utils.isNumeric(id_cond) || !Utils.isNumeric(id_aut)) {
@@ -216,7 +199,7 @@ public class RegistrarS extends javax.swing.JPanel {
             DAOReporte daoReporte = new DAOReporteimpl();
 
             // Validamos que el conductor no tenga ya un autobús asignado.
-            com.mycompany.models.Reporte currentAssignment = daoReporte.getReporte(currentConductor, currentAutobus, ruta);
+            com.mycompany.models.Reporte currentAssignment = daoReporte.getReporte(currentConductor, currentAutobus);
             if (currentAssignment != null) {
                 javax.swing.JOptionPane.showMessageDialog(this, "Este conductor ya tiene asignado este autobús en esta ruta. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
                 idautTxt.requestFocus();
@@ -228,14 +211,12 @@ public class RegistrarS extends javax.swing.JPanel {
                 com.mycompany.models.Reporte reporte = new com.mycompany.models.Reporte();
                 reporte.setCond_id(currentConductor.getId());
                 reporte.setAut_id(currentAutobus.getID());
-                reporte.setRuta(ruta); // Agregar la ruta al objeto Reporte
                 reporte.setDate_out(fechaActual);
                 daoReporte.registrar(reporte);
 
                 javax.swing.JOptionPane.showMessageDialog(this, "Autobús ID: " + currentAutobus.getID() + " conducido por " + currentConductor.getNombres() + " registrado exitosamente.\n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 idconTxt.setText("");
                 idautTxt.setText("");
-                rutaTxt.setText(""); // Limpiar el campo de texto de la ruta después del registro
             } else {
                 javax.swing.JOptionPane.showMessageDialog(this, "Error: No se puede registrar la salida. Conductor o autobús no encontrado.\n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
             }
@@ -260,8 +241,6 @@ public class RegistrarS extends javax.swing.JPanel {
     private javax.swing.JLabel idcond;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton regS;
-    private javax.swing.JLabel ruta;
-    private javax.swing.JTextField rutaTxt;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }

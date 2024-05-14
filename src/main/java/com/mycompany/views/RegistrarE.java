@@ -26,13 +26,10 @@ public class RegistrarE extends javax.swing.JPanel {
         regE.putClientProperty("FlatLaf.style", "font:14 $semibold.font");
         idcond.putClientProperty("FlatLaf.styleClass", "large");
         idcond.setForeground(Color.black);
-        dine.putClientProperty("FlatLaf.styleClass", "large");
-        dine.setForeground(Color.black);
         idaut.putClientProperty("FlatLaf.styleClass", "large");
         idaut.setForeground(Color.black);
         idcondTxt.putClientProperty("JTextField.placeholderText", "Ingrese el ID del conductor");
         idautTxt.putClientProperty("JTextField.placeholderText", "Ingrese el ID del autobus");
-        dinTxt.putClientProperty("JTextField.placeholderText", "Ingrese el dinero recolectado");
     }
 
     /**
@@ -51,8 +48,6 @@ public class RegistrarE extends javax.swing.JPanel {
         regE = new javax.swing.JButton();
         idcondTxt = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        dine = new javax.swing.JLabel();
-        dinTxt = new javax.swing.JTextField();
         title = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
@@ -81,10 +76,6 @@ public class RegistrarE extends javax.swing.JPanel {
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
-        dine.setText("Dinero recaudado");
-
-        dinTxt.setBackground(new java.awt.Color(255, 255, 255));
-
         title.setText("Registrar Entrada");
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
@@ -92,49 +83,51 @@ public class RegistrarE extends javax.swing.JPanel {
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(idcondTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(idaut)
-                    .addComponent(idautTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(idcond))
-                .addGap(48, 48, 48)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dine)
-                    .addComponent(dinTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(regE, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(title))
+                        .addGap(30, 30, 30)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idcondTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(idcond))
+                        .addGap(39, 39, 39)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(idaut))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(idautTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(title)))
+                .addGap(34, 34, 34))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                .addComponent(regE, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(197, 197, 197))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(title)
-                .addGap(58, 58, 58)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(idcond)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(idcondTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addComponent(idaut)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(idautTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(dine)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dinTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(72, 72, 72)
-                        .addComponent(regE, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(title)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(93, 93, 93)
+                                .addComponent(idcond)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idcondTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(idaut)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idautTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(regE, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -150,93 +143,24 @@ public class RegistrarE extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void regEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regEActionPerformed
-        /*String id_cond = idcondTxt.getText();
-        String id_aut = idautTxt.getText();
-        String dineroIngresado = dinTxt.getText(); // Campo para el dinero ingresado por el conductor
-
-// Validaciones para los campos
-        if (id_cond.isEmpty() || id_aut.isEmpty() || dineroIngresado.isEmpty()) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Debe llenar todos los campos. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
-            idcondTxt.requestFocus();
-            return;
-        } else if (!Utils.isNumeric(id_cond) || !Utils.isNumeric(id_aut) || !Utils.isNumeric(dineroIngresado)) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Los campos Folio y el ID del libro deben ser números enteros. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
-            idcondTxt.requestFocus();
-            return;
-        } else if (Integer.parseInt(id_cond) <= 0 || Integer.parseInt(id_aut) <= 0 || Integer.parseInt(dineroIngresado) <0) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Los campos Folio y el ID del libro deben ser mayor que 0. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
-            idcondTxt.requestFocus();
-            return;
-        }
-
-        try {
-            DAOConductores daoConductores = new DAOConductoresimpl();
-
-            // Validamos existencia del usuario
-            com.mycompany.models.Conductores currentConductor = daoConductores.getConductorById(Integer.parseInt(id_cond));
-            if (currentConductor == null) {
-                javax.swing.JOptionPane.showMessageDialog(this, "No se encontró ningún usuario con ese folio. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
-                idcondTxt.requestFocus();
-                return;
-            }
-
-            DAOAutobuses daoAutobuses = new DAOAutobusesimpl();
-
-            // Validamos existencia del libro
-            com.mycompany.models.Autobuses currentAutobus = daoAutobuses.getAutobusById(Integer.parseInt(id_aut));
-            if (currentAutobus == null) {
-                javax.swing.JOptionPane.showMessageDialog(this, "No se encontró ningún libro con ese ID. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
-                idautTxt.requestFocus();
-                return;
-            }
-
-            DAOReporte daoReporte = new DAOReporteimpl();
-
-            // Validamos que el usuario tenga ese libro prestado.
-            com.mycompany.models.Reporte currentReporte = daoReporte.getReporte(currentConductor, currentAutobus, dineroIngresado);
-            if (currentReporte == null) {
-                javax.swing.JOptionPane.showMessageDialog(this, "No se ha podido encontrar el préstamo correspiendote a los datos ingresados. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
-                idautTxt.requestFocus();
-                return;
-            }
-
-            // Todo OK: Devolvemos libro.
-            currentReporte.setDate_return(Utils.getFechaActual());
-            daoReporte.modificar(currentReporte);
-
-            javax.swing.JOptionPane.showMessageDialog(this, "Libro ID: " + currentAutobus.getID() + " devuelto exitosamente por " + currentConductor.getNombres()+ ".\n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            idcondTxt.setText("");
-            idautTxt.setText("");
-            dinTxt.setText("");
-
-            // Verificamos sanciones
-            
-        } catch (Exception e) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un error al prestar el libro. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
-            System.out.println(e.getMessage());
-        }*/
-
         String id_cond = idcondTxt.getText();
         String id_aut = idautTxt.getText();
-        String dineroRecogido = dinTxt.getText(); // Agregar la lectura del campo de texto del dinero recogido
 
 // Validaciones para los campos
-        if (id_cond.isEmpty() || id_aut.isEmpty() || dineroRecogido.isEmpty()) {
+        if (id_cond.isEmpty() || id_aut.isEmpty()) {
             javax.swing.JOptionPane.showMessageDialog(this, "Debe llenar todos los campos. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
             if (id_cond.isEmpty()) {
                 idcondTxt.requestFocus();
-            } else if (id_aut.isEmpty()) {
-                idautTxt.requestFocus();
             } else {
-                dinTxt.requestFocus();
+                idautTxt.requestFocus();
             }
             return;
-        } else if (!Utils.isNumeric(id_cond) || !Utils.isNumeric(id_aut) || !Utils.isNumeric(dineroRecogido)) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Los campos ID conductor, ID del autobus y dinero recogido deben ser números enteros. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+        } else if (!Utils.isNumeric(id_cond) || !Utils.isNumeric(id_aut)) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Los campos ID conductor y ID del autobus deben ser números enteros. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
             idcondTxt.requestFocus();
             return;
-        } else if (Integer.parseInt(id_cond) <= 0 || Integer.parseInt(id_aut) <= 0 || Integer.parseInt(dineroRecogido) <= 0) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Los campos ID conductor, ID del autobus y dinero recogido deben ser mayores que 0. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+        } else if (Integer.parseInt(id_cond) <= 0 || Integer.parseInt(id_aut) <= 0) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Los campos ID conductor y ID del autobus deben ser mayores que 0. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
             idcondTxt.requestFocus();
             return;
         }
@@ -265,29 +189,18 @@ public class RegistrarE extends javax.swing.JPanel {
             DAOReporte daoReporte = new DAOReporteimpl();
 
             // Validamos que el conductor no tenga ya un autobús asignado.
-            com.mycompany.models.Reporte currentAssignment = daoReporte.getReporte(currentConductor, currentAutobus, dineroRecogido);
-            if (currentAssignment != null) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Este conductor ya tiene asignado este autobús. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+            com.mycompany.models.Reporte currentReporte = daoReporte.getReporte(currentConductor, currentAutobus);
+            if (currentReporte == null) {
+                javax.swing.JOptionPane.showMessageDialog(this, "No se ha podido encontrar el préstamo correspiendote a los datos ingresados. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
                 idautTxt.requestFocus();
                 return;
             }
-            if (currentConductor != null && currentAutobus != null) {
-                // Todo OK: Registrar salida del autobús con el conductor.
-                String fechaActual = Utils.getFechaActual();
-                com.mycompany.models.Reporte reporte = new com.mycompany.models.Reporte();
-                reporte.setCond_id(currentConductor.getId());
-                reporte.setAut_id(currentAutobus.getID());
-                reporte.setDate_out(fechaActual);
-                reporte.setDinero_recogido(Integer.parseInt(dineroRecogido)); // Agregar el dinero recogido al objeto Reporte
-                daoReporte.registrar(reporte);
+            currentReporte.setDate_return(Utils.getFechaActual());
+            daoReporte.modificar(currentReporte);
 
-                javax.swing.JOptionPane.showMessageDialog(this, "Autobús ID: " + currentAutobus.getID() + " conducido por " + currentConductor.getNombres() + " registrado exitosamente.\n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                idcondTxt.setText("");
-                idautTxt.setText("");
-                dinTxt.setText(""); // Limpiar el campo de texto del dinero recogido después del registro
-            } else {
-                javax.swing.JOptionPane.showMessageDialog(this, "Error: No se puede registrar la salida. Conductor o autobús no encontrado.\n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
-            }
+            javax.swing.JOptionPane.showMessageDialog(this, "Autobús ID: " + currentAutobus.getID() + " conducido por " + currentConductor.getNombres() + " registrado exitosamente.\n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            idcondTxt.setText("");
+            idautTxt.setText("");
         } catch (Exception e) {
             javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un error al registrar la entrada del autobús. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
             e.printStackTrace(); // Imprimir la excepción en la consola
@@ -297,8 +210,6 @@ public class RegistrarE extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.JTextField dinTxt;
-    private javax.swing.JLabel dine;
     private javax.swing.JLabel idaut;
     private javax.swing.JTextField idautTxt;
     private javax.swing.JLabel idcond;

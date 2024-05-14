@@ -1,6 +1,7 @@
 package com.mycompany.models;
 
 public class Autobuses {
+
     private int ID;
     private String marca;
     private String modelo;
@@ -9,6 +10,15 @@ public class Autobuses {
     private String placa;
     private int kilometraje;
     private int available;
+    private String ruta;
+
+    public String getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(String ruta) {
+        this.ruta = ruta;
+    }
 
     public int getID() {
         return ID;
@@ -17,8 +27,6 @@ public class Autobuses {
     public void setID(int ID) {
         this.ID = ID;
     }
-    
-    
 
     public String getMarca() {
         return marca;
@@ -76,5 +84,4 @@ public class Autobuses {
         this.available = available;
     }
 
-    
 }

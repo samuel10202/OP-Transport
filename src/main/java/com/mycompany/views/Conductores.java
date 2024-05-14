@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.mycompany.views;
 
 import OP.DAOConductoresimpl;
@@ -11,15 +7,8 @@ import java.awt.Color;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author pes20
- */
 public class Conductores extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Conductor
-     */
     public Conductores() {
         initComponents();
         InitStyles();
@@ -91,14 +80,14 @@ public class Conductores extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "CC", "Nombres", "Apellidos", "Fecha de nacimiento", "Telefono", "Direccion", "Genero", "Licencia", "Lic. Exp", "Lic. Venc", "Sueldo"
+                "ID", "CC", "Nombres", "Apellidos", "Fecha de nacimiento", "Telefono", "Direccion", "Genero", "Licencia", "Lic. Exp", "Lic. Venc"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -128,7 +117,6 @@ public class Conductores extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(8).setResizable(false);
             jTable1.getColumnModel().getColumn(9).setResizable(false);
             jTable1.getColumnModel().getColumn(10).setResizable(false);
-            jTable1.getColumnModel().getColumn(11).setResizable(false);
         }
 
         deleteButton.setBackground(new java.awt.Color(18, 90, 173));

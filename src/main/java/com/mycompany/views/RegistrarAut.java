@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.mycompany.views;
 
 import OP.DAOAutobusesimpl;
 import com.mycompany.interfaces.DAOAutobuses;
 import java.awt.Color;
 
-/**
- *
- * @author pes20
- */
 public class RegistrarAut extends javax.swing.JPanel {
 
     boolean isEdition = false;
@@ -38,6 +30,7 @@ public class RegistrarAut extends javax.swing.JPanel {
         plazas_dispTxt.putClientProperty("JTextField.placeholderText", "Ingrese las plazas disponibles.");
         placaTxt.putClientProperty("JTextField.placeholderText", "Ingrese la placa del autobus.");
         kilomeTxt.putClientProperty("JTextField.placeholderText", "Ingrese el kilometraje del autobus.");
+        rutaTxt.putClientProperty("JTextField.placeholderText", "Ingrese la ruta del autobus.");
 
         if (isEdition) {
             title.setText("Editar autobus");
@@ -50,7 +43,7 @@ public class RegistrarAut extends javax.swing.JPanel {
                 plazas_dispTxt.setText(String.valueOf(autobusEdition.getPlazas_disponibles()));
                 placaTxt.setText(autobusEdition.getPlaca());
                 kilomeTxt.setText(String.valueOf(autobusEdition.getKilometraje()));
-
+                rutaTxt.setText(String.valueOf(autobusEdition.getRuta()));
             }
         }
     }
@@ -67,8 +60,8 @@ public class RegistrarAut extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         marca = new javax.swing.JLabel();
-        marcaTxt = new javax.swing.JTextField();
-        modelo = new javax.swing.JLabel();
+        rutaTxt = new javax.swing.JTextField();
+        ruta = new javax.swing.JLabel();
         modeloTxt = new javax.swing.JTextField();
         año_fab = new javax.swing.JLabel();
         añofabTxt = new javax.swing.JTextField();
@@ -79,37 +72,53 @@ public class RegistrarAut extends javax.swing.JPanel {
         kilome = new javax.swing.JLabel();
         kilomeTxt = new javax.swing.JTextField();
         button = new javax.swing.JButton();
+        marcaTxt = new javax.swing.JTextField();
+        modelo1 = new javax.swing.JLabel();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setPreferredSize(new java.awt.Dimension(576, 410));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         title.setText("Registrar nuevo autobus");
+        bg.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 373, -1));
 
         marca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         marca.setText("Marca");
+        bg.add(marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 208, -1));
 
-        marcaTxt.addActionListener(new java.awt.event.ActionListener() {
+        rutaTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                marcaTxtActionPerformed(evt);
+                rutaTxtActionPerformed(evt);
             }
         });
+        bg.add(rutaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 210, 30));
 
-        modelo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        modelo.setText("Modelo");
+        ruta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ruta.setText("Ruta");
+        bg.add(ruta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 208, 29));
+        bg.add(modeloTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 208, 30));
 
         año_fab.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         año_fab.setText("Año de fabricacion");
+        bg.add(año_fab, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 208, 32));
+        bg.add(añofabTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 208, 30));
 
         plazas_disp.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         plazas_disp.setText("Plazas disponible");
+        bg.add(plazas_disp, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 208, 32));
+        bg.add(plazas_dispTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 208, 30));
 
         placa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         placa.setText("Placa");
+        bg.add(placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 208, 33));
+        bg.add(placaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 208, 30));
 
         kilome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         kilome.setText("Kilometraje");
+        bg.add(kilome, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 69, -1));
 
         kilomeTxt.setToolTipText("");
+        bg.add(kilomeTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 210, 30));
 
         button.setBackground(new java.awt.Color(18, 90, 173));
         button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -122,78 +131,18 @@ public class RegistrarAut extends javax.swing.JPanel {
                 buttonActionPerformed(evt);
             }
         });
+        bg.add(button, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 214, 43));
 
-        javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
-        bg.setLayout(bgLayout);
-        bgLayout.setHorizontalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(marca, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112)
-                .addComponent(kilome, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(marcaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110)
-                .addComponent(kilomeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112)
-                .addComponent(placa, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(modeloTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112)
-                .addComponent(placaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(año_fab, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112)
-                .addComponent(plazas_disp, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(añofabTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112)
-                .addComponent(plazas_dispTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(170, 170, 170)
-                .addComponent(button, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        bgLayout.setVerticalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(title)
-                .addGap(38, 38, 38)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(marca)
-                    .addComponent(kilome))
-                .addGap(20, 20, 20)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(marcaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(kilomeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(placa, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(modeloTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(placaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(año_fab, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(plazas_disp, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(añofabTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(plazas_dispTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addComponent(button, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        marcaTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                marcaTxtActionPerformed(evt);
+            }
+        });
+        bg.add(marcaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 210, 30));
+
+        modelo1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        modelo1.setText("Modelo");
+        bg.add(modelo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 208, 29));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -239,16 +188,17 @@ public class RegistrarAut extends javax.swing.JPanel {
             return; // Salimos del método si el ID está vacío
         }
 
-        String marc = marcaTxt.getText();
+        String marc = rutaTxt.getText();
         String model = modeloTxt.getText();
         String añofab = añofabTxt.getText();
         String plazasdisp = plazas_dispTxt.getText();
         String plac = placaTxt.getText();
         String kilom = kilomeTxt.getText();
+        String rutaa = rutaTxt.getText();
 
-        if (marc.isEmpty() || model.isEmpty() || añofab.isEmpty() || plazasdisp.isEmpty() || plac.isEmpty() || kilom.isEmpty()) {
+        if (marc.isEmpty() || model.isEmpty() || añofab.isEmpty() || plazasdisp.isEmpty() || plac.isEmpty() || kilom.isEmpty() || rutaa.isEmpty()) {
             javax.swing.JOptionPane.showMessageDialog(this, "Debe llenar todos los campos.", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            marcaTxt.requestFocus();
+            rutaTxt.requestFocus();
             return; // Salimos del método si algún campo está vacío
         }
 
@@ -259,29 +209,8 @@ public class RegistrarAut extends javax.swing.JPanel {
         autobus.setPlazas_disponibles(plazas);
         autobus.setPlaca(plac);
         autobus.setKilometraje(klm);
+        autobus.setRuta(rutaa);
 
-        /*try {
-            DAOAutobuses dao = new DAOAutobusesimpl();
-            if (!isEdition) {
-                dao.registrar(autobus);
-            } else {
-                dao.modificar(autobus);
-            }
-            String succesMsg = isEdition ? "modificado" : "registrado";
-            javax.swing.JOptionPane.showMessageDialog(this, "Autobus " + succesMsg + " correctamente \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            if (!isEdition) {
-                marcaTxt.setText("");
-                modeloTxt.setText("");
-                añofabTxt.setText("");
-                plazas_dispTxt.setText("");
-                placaTxt.setText("");
-                kilomeTxt.setText("");
-            }
-        } catch (Exception e) {
-            String errorMsg = isEdition ? "modificar" : "registrar";
-            javax.swing.JOptionPane.showConfirmDialog(this, "Ocurrio un error " + errorMsg + " al autobus. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
-            System.out.println(e.getMessage());
-        }*/
         try {
             DAOAutobuses dao = new DAOAutobusesimpl();
 
@@ -304,12 +233,13 @@ public class RegistrarAut extends javax.swing.JPanel {
 
             // Limpiar los campos después del registro exitoso
             if (!isEdition) {
-                marcaTxt.setText("");
+                rutaTxt.setText("");
                 modeloTxt.setText("");
                 añofabTxt.setText("");
                 plazas_dispTxt.setText("");
                 placaTxt.setText("");
                 kilomeTxt.setText("");
+                rutaTxt.setText("");
             }
         } catch (Exception e) {
             String errorMsg = isEdition ? "modificar" : "registrar";
@@ -317,6 +247,10 @@ public class RegistrarAut extends javax.swing.JPanel {
             System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_buttonActionPerformed
+
+    private void rutaTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutaTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rutaTxtActionPerformed
 
     private void marcaTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marcaTxtActionPerformed
         // TODO add your handling code here:
@@ -332,12 +266,14 @@ public class RegistrarAut extends javax.swing.JPanel {
     private javax.swing.JTextField kilomeTxt;
     private javax.swing.JLabel marca;
     private javax.swing.JTextField marcaTxt;
-    private javax.swing.JLabel modelo;
+    private javax.swing.JLabel modelo1;
     private javax.swing.JTextField modeloTxt;
     private javax.swing.JLabel placa;
     private javax.swing.JTextField placaTxt;
     private javax.swing.JLabel plazas_disp;
     private javax.swing.JTextField plazas_dispTxt;
+    private javax.swing.JLabel ruta;
+    private javax.swing.JTextField rutaTxt;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }

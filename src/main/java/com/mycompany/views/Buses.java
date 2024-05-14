@@ -9,9 +9,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class Buses extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Buses
-     */
     public Buses() {
         initComponents();
         InitStyles();
@@ -29,7 +26,7 @@ public class Buses extends javax.swing.JPanel {
         try {
             DAOAutobuses dao = new DAOAutobusesimpl();
             DefaultTableModel modell = (DefaultTableModel) jTable1.getModel();
-            dao.listar("").forEach((u) -> modell.addRow(new Object[]{u.getID(), u.getMarca(), u.getModelo(), u.getAño_fabricacion(), u.getPlazas_disponibles(), u.getPlaca(), u.getKilometraje()}));
+            dao.listar("").forEach((u) -> modell.addRow(new Object[]{u.getID(), u.getMarca(), u.getModelo(), u.getAño_fabricacion(), u.getPlazas_disponibles(), u.getPlaca(), u.getKilometraje(), u.getRuta()}));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -113,14 +110,14 @@ public class Buses extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Marca", "Modelo", "Año de Fabricacion", "Plazas disponibles", "Placa", "Kilometraje"
+                "ID", "Marca", "Modelo", "Año de Fabricacion", "Plazas disponibles", "Placa", "Kilometraje", "Ruta"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -146,6 +143,7 @@ public class Buses extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(4).setResizable(false);
             jTable1.getColumnModel().getColumn(5).setResizable(false);
             jTable1.getColumnModel().getColumn(6).setResizable(false);
+            jTable1.getColumnModel().getColumn(7).setResizable(false);
         }
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);

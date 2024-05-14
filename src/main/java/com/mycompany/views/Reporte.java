@@ -27,7 +27,7 @@ public class Reporte extends javax.swing.JPanel {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             // Limpiamos tabla
             model.setRowCount(0);
-            dao.listar().forEach((u) -> model.addRow(new Object[]{u.getCond_id(), u.getAut_id(),u.getRuta(), u.getDate_out(), u.getDate_return(), u.getDinero_recogido()}));
+            dao.listar().forEach((u) -> model.addRow(new Object[]{u.getCond_id(), u.getAut_id(), u.getDate_out(), u.getDate_return()}));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -71,14 +71,14 @@ public class Reporte extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID Cond.", "ID Autobus", "Ruta", "Fecha de Salida", "Fecha de Entrega", "Dinero recogido"
+                "ID Cond.", "ID Autobus", "Fecha de Salida", "Fecha de Entrega"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -103,8 +103,6 @@ public class Reporte extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(1).setResizable(false);
             jTable1.getColumnModel().getColumn(2).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(5).setResizable(false);
         }
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);

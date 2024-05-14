@@ -14,13 +14,14 @@ public class DAOAutobusesimpl extends Database implements DAOAutobuses {
     public void registrar(Autobuses autobus) throws Exception {
         try {
             this.Conectar();
-            PreparedStatement st = this.conexion.prepareStatement("INSERT INTO buses(marca, modelo, año_fabricacion, plazas_disponibles, placa, kilometraje) VALUES (?,?,?,?,?,?);");
+            PreparedStatement st = this.conexion.prepareStatement("INSERT INTO buses(marca, modelo, año_fabricacion, plazas_disponibles, placa, kilometraje, ruta) VALUES (?,?,?,?,?,?,?);");
             st.setString(1, autobus.getMarca());
             st.setString(2, autobus.getModelo());
             st.setString(3, autobus.getAño_fabricacion());
             st.setInt(4, autobus.getPlazas_disponibles());
             st.setString(5, autobus.getPlaca());
             st.setInt(6, autobus.getKilometraje());
+            st.setString(7, autobus.getRuta());
             st.executeUpdate();
             st.close();
         } catch (Exception e) {
@@ -34,13 +35,14 @@ public class DAOAutobusesimpl extends Database implements DAOAutobuses {
     public void modificar(Autobuses autobus) throws Exception {
         try {
             this.Conectar();
-            PreparedStatement st = this.conexion.prepareStatement("UPDATE buses SET marca = ?, modelo = ?, año_fabricacion = ?, plazas_disponibles = ?, placa = ?, kilometraje = ?;");
+            PreparedStatement st = this.conexion.prepareStatement("UPDATE buses SET marca = ?, modelo = ?, año_fabricacion = ?, plazas_disponibles = ?, placa = ?, kilometraje = ?, ruta = ?;");
             st.setString(1, autobus.getMarca());
             st.setString(2, autobus.getModelo());
             st.setString(3, autobus.getAño_fabricacion());
             st.setInt(4, autobus.getPlazas_disponibles());
             st.setString(5, autobus.getPlaca());
             st.setInt(6, autobus.getKilometraje());
+            st.setString(7, autobus.getRuta());
             st.executeUpdate();
             st.close();
         } catch (Exception e) {
@@ -70,7 +72,7 @@ public class DAOAutobusesimpl extends Database implements DAOAutobuses {
         List<Autobuses> lista = null;
         try {
             this.Conectar();
-            String Query = buse.isEmpty() ? "SELECT * FROM buses;" : "SELECT * FROM buses WHERE marca LIKE '%" + buse + "%';";
+            String Query = buse.isEmpty() ? "SELECT * FROM buses;" : "SELECT * FROM buses WHERE placa LIKE '%" + buse + "%';";
             PreparedStatement st = this.conexion.prepareStatement(Query);
 
             lista = new ArrayList();
@@ -84,6 +86,7 @@ public class DAOAutobusesimpl extends Database implements DAOAutobuses {
                 autobuses.setPlazas_disponibles(rs.getInt("plazas_disponibles"));
                 autobuses.setPlaca(rs.getString("placa"));
                 autobuses.setKilometraje(rs.getInt("kilometraje"));
+                autobuses.setRuta(rs.getString("ruta"));
                 lista.add(autobuses);
             }
             rs.close();
