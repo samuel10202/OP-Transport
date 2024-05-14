@@ -1,0 +1,3 @@
+Pasos para correr el codigo y que sea totalmente funcional. 1.Descarga e instala XAMPP 2.Descarga la base de datos que te dejare aca tambien en el repositorio y importala en phpMyAdmin en la web 3.Realiza la conexion en el XAMPP de apache y mysql. Despues de esto ya podras abrir apache netbeans y abrir el proyecto 4.Para correr el proyeco en el package OP dale RUN especificamente al Dasboard(ignora la clase main que tiene por defecto)
+
+El diagrama de clases lo subi a ferrum pero tambien te lo dejo aca porque para verlo es necesario instalar en apache netbeans el plugin easyUML y con eso se podra ver el diagrama de clases sin ningun problema
