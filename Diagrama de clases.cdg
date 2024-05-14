@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="OP">
+  <ClassDiagramComponents>
+    <Class name="Database" package="com.mycompany.db" visibility="public" xPosition="1477.0" yPosition="27.0">
+      <Fields>
+        <Field name="conexion" type="Connection" visibility="protected"/>
+        <Field name="JDBC_DRIVER" type="String" visibility="private" isFinal="true"/>
+        <Field name="DB_URL" type="String" visibility="private" isFinal="true"/>
+        <Field name="USER" type="String" visibility="private" isFinal="true"/>
+        <Field name="PASS" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Conectar" returnType="void" visibility="public"/>
+        <Method name="Cerrar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Autobuses" package="com.mycompany.models" visibility="public" xPosition="2343.0" yPosition="191.0">
+      <Fields>
+        <Field name="ID" type="int" visibility="private"/>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="año_fabricacion" type="String" visibility="private"/>
+        <Field name="plazas_disponibles" type="int" visibility="private"/>
+        <Field name="placa" type="String" visibility="private"/>
+        <Field name="kilometraje" type="int" visibility="private"/>
+        <Field name="available" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getID" returnType="int" visibility="public"/>
+        <Method name="setID" returnType="void" visibility="public">
+          <Argument type="int" name="ID"/>
+        </Method>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="setModelo" returnType="void" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="getAño_fabricacion" returnType="String" visibility="public"/>
+        <Method name="setAño_fabricacion" returnType="void" visibility="public">
+          <Argument type="String" name="año_fabricacion"/>
+        </Method>
+        <Method name="getPlazas_disponibles" returnType="int" visibility="public"/>
+        <Method name="setPlazas_disponibles" returnType="void" visibility="public">
+          <Argument type="int" name="plazas_disponibles"/>
+        </Method>
+        <Method name="getPlaca" returnType="String" visibility="public"/>
+        <Method name="setPlaca" returnType="void" visibility="public">
+          <Argument type="String" name="placa"/>
+        </Method>
+        <Method name="getKilometraje" returnType="int" visibility="public"/>
+        <Method name="setKilometraje" returnType="void" visibility="public">
+          <Argument type="int" name="kilometraje"/>
+        </Method>
+        <Method name="getAvailable" returnType="int" visibility="public"/>
+        <Method name="setAvailable" returnType="void" visibility="public">
+          <Argument type="int" name="available"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Conductores" package="com.mycompany.models" visibility="public" xPosition="1961.0" yPosition="894.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="cc" type="int" visibility="private"/>
+        <Field name="nombres" type="String" visibility="private"/>
+        <Field name="apellidos" type="String" visibility="private"/>
+        <Field name="telefono" type="int" visibility="private"/>
+        <Field name="genero" type="String" visibility="private"/>
+        <Field name="licencia" type="int" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="fecha_nacimiento" type="String" visibility="private"/>
+        <Field name="fecha_vencLicen" type="String" visibility="private"/>
+        <Field name="fecha_expeLicen" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getCc" returnType="int" visibility="public"/>
+        <Method name="setCc" returnType="void" visibility="public">
+          <Argument type="int" name="cc"/>
+        </Method>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getNombres" returnType="String" visibility="public"/>
+        <Method name="setNombres" returnType="void" visibility="public">
+          <Argument type="String" name="nombres"/>
+        </Method>
+        <Method name="getApellidos" returnType="String" visibility="public"/>
+        <Method name="setApellidos" returnType="void" visibility="public">
+          <Argument type="String" name="apellidos"/>
+        </Method>
+        <Method name="getTelefono" returnType="int" visibility="public"/>
+        <Method name="setTelefono" returnType="void" visibility="public">
+          <Argument type="int" name="telefono"/>
+        </Method>
+        <Method name="getGenero" returnType="String" visibility="public"/>
+        <Method name="setGenero" returnType="void" visibility="public">
+          <Argument type="String" name="genero"/>
+        </Method>
+        <Method name="getLicencia" returnType="int" visibility="public"/>
+        <Method name="setLicencia" returnType="void" visibility="public">
+          <Argument type="int" name="licencia"/>
+        </Method>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="getFecha_nacimiento" returnType="String" visibility="public"/>
+        <Method name="setFecha_nacimiento" returnType="void" visibility="public">
+          <Argument type="String" name="fecha_nacimiento"/>
+        </Method>
+        <Method name="getFecha_vencLicen" returnType="String" visibility="public"/>
+        <Method name="setFecha_vencLicen" returnType="void" visibility="public">
+          <Argument type="String" name="fecha_vencLicen"/>
+        </Method>
+        <Method name="getFecha_expeLicen" returnType="String" visibility="public"/>
+        <Method name="setFecha_expeLicen" returnType="void" visibility="public">
+          <Argument type="String" name="fecha_expeLicen"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Reporte" package="com.mycompany.models" visibility="public" xPosition="1522.0" yPosition="1065.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="date_out" type="String" visibility="private"/>
+        <Field name="date_return" type="String" visibility="private"/>
+        <Field name="ruta" type="String" visibility="private"/>
+        <Field name="cond_id" type="int" visibility="private"/>
+        <Field name="aut_id" type="int" visibility="private"/>
+        <Field name="dinero_recogido" type="int" visibility="private"/>
+        <Field name="available" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getAvailable" returnType="String" visibility="public"/>
+        <Method name="setAvailable" returnType="void" visibility="public">
+          <Argument type="String" name="available"/>
+        </Method>
+        <Method name="getRuta" returnType="String" visibility="public"/>
+        <Method name="setRuta" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getCond_id" returnType="int" visibility="public"/>
+        <Method name="setCond_id" returnType="void" visibility="public">
+          <Argument type="int" name="cond_id"/>
+        </Method>
+        <Method name="getAut_id" returnType="int" visibility="public"/>
+        <Method name="setAut_id" returnType="void" visibility="public">
+          <Argument type="int" name="aut_id"/>
+        </Method>
+        <Method name="getDate_out" returnType="String" visibility="public"/>
+        <Method name="setDate_out" returnType="void" visibility="public">
+          <Argument type="String" name="date_out"/>
+        </Method>
+        <Method name="getDate_return" returnType="String" visibility="public"/>
+        <Method name="setDate_return" returnType="void" visibility="public">
+          <Argument type="String" name="date_return"/>
+        </Method>
+        <Method name="getDinero_recogido" returnType="int" visibility="public"/>
+        <Method name="setDinero_recogido" returnType="void" visibility="public">
+          <Argument type="int" name="dinero_recogido"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Buses" package="com.mycompany.views" visibility="public" xPosition="1590.0" yPosition="1663.0">
+      <Fields>
+        <Field name="addButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="autSearch" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="bg" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="deleteButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="editButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="searchButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="title" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="InitStyles" returnType="void" visibility="private"/>
+        <Method name="LoadAutobuses" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="searchButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="deleteButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="editButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="addButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jTable1MousePressed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Conductores" package="com.mycompany.views" visibility="public" xPosition="97.0" yPosition="385.0">
+      <Fields>
+        <Field name="addButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="bg" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="deleteButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="editButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="searchButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="title" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="userSearch" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="InitStyles" returnType="void" visibility="private"/>
+        <Method name="LoadConductores" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="searchButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jTable1MousePressed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="deleteButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="editButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="addButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="userSearchActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Principal" package="com.mycompany.views" visibility="public" xPosition="845.0" yPosition="1676.0">
+      <Fields>
+        <Field name="bg" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="des1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="des2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="des3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="titulo" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="InitStyles" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="RegistrarAut" package="com.mycompany.views" visibility="public" xPosition="861.0" yPosition="3386.0">
+      <Fields>
+        <Field name="isEdition" type="boolean" visibility="package"/>
+        <Field name="autobusEdition" type="com.mycompany.models.Autobuses" visibility="package"/>
+        <Field name="año_fab" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="añofabTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="bg" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="button" type="javax.swing.JButton" visibility="private"/>
+        <Field name="kilome" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="kilomeTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="marca" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="marcaTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="modelo" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="modeloTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="placa" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="placaTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="plazas_disp" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="plazas_dispTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="title" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="com.mycompany.models.Autobuses" name="autobus"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="InitStyles" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="buttonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="marcaTxtActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RegistrarCon" package="com.mycompany.views" visibility="public" xPosition="861.0" yPosition="2691.0">
+      <Fields>
+        <Field name="isEdition" type="boolean" visibility="package"/>
+        <Field name="conductorEdition" type="com.mycompany.models.Conductores" visibility="package"/>
+        <Field name="apelli" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="apelliTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="bg" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="button" type="javax.swing.JButton" visibility="private"/>
+        <Field name="cc" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="ccTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="direccion" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="direccionTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="fechex" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="fechexTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="fechnac" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="fechnacTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="fechven" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="fechvenTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="gen" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="genTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="name" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="nameTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="numlic" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="numlicTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="numtl" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="numtlTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="title" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="com.mycompany.models.Conductores" name="conductor"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="InitStyles" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="buttonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RegistrarE" package="com.mycompany.views" visibility="public" xPosition="845.0" yPosition="2313.0">
+      <Fields>
+        <Field name="bg" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="dinTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="dine" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="idaut" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="idautTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="idcond" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="idcondTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jSeparator1" type="javax.swing.JSeparator" visibility="private"/>
+        <Field name="regE" type="javax.swing.JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="InitStyles" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="regEActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RegistrarS" package="com.mycompany.views" visibility="public" xPosition="845.0" yPosition="1936.0">
+      <Fields>
+        <Field name="bg" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="idaut" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="idautTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="idconTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="idcond" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jSeparator1" type="javax.swing.JSeparator" visibility="private"/>
+        <Field name="regS" type="javax.swing.JButton" visibility="private"/>
+        <Field name="ruta" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="rutaTxt" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="InitStyles" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="regSActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Reporte" package="com.mycompany.views" visibility="public" xPosition="1522.0" yPosition="560.0">
+      <Fields>
+        <Field name="bg" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="title" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="InitStyles" returnType="void" visibility="private"/>
+        <Method name="LoadReporte" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jTable1InputMethodTextChanged" returnType="void" visibility="private">
+          <Argument type="java.awt.event.InputMethodEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DAOAutobusesimpl" package="OP" visibility="public" xPosition="1837.0" yPosition="27.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="registrar" returnType="void" visibility="public">
+          <Argument type="Autobuses" name="autobus"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="public">
+          <Argument type="Autobuses" name="autobus"/>
+        </Method>
+        <Method name="eliminar" returnType="void" visibility="public">
+          <Argument type="int" name="autobusId"/>
+        </Method>
+        <Method name="listar" returnType="List&lt;Autobuses&gt;" visibility="public">
+          <Argument type="String" name="buse"/>
+        </Method>
+        <Method name="getAutobusById" returnType="Autobuses" visibility="public">
+          <Argument type="int" name="autobusId"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DAOConductoresimpl" package="OP" visibility="public" xPosition="998.0" yPosition="46.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="registrar" returnType="void" visibility="public">
+          <Argument type="Conductores" name="conductores"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="public">
+          <Argument type="Conductores" name="conductor"/>
+        </Method>
+        <Method name="eliminar" returnType="void" visibility="public">
+          <Argument type="int" name="conductorId"/>
+        </Method>
+        <Method name="listar" returnType="List&lt;Conductores&gt;" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getConductorById" returnType="Conductores" visibility="public">
+          <Argument type="int" name="conductorId"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DAOReporteimpl" package="OP" visibility="public" xPosition="1229.0" yPosition="317.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="registrar" returnType="void" visibility="public">
+          <Argument type="Reporte" name="reporte"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="public">
+          <Argument type="Reporte" name="reportes"/>
+        </Method>
+        <Method name="getReporte" returnType="Reporte" visibility="public">
+          <Argument type="Conductores" name="conductor"/>
+          <Argument type="Autobuses" name="autobus"/>
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="listar" returnType="List&lt;Reporte&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Dashboard" package="OP" visibility="public" xPosition="808.0" yPosition="1036.0">
+      <Fields>
+        <Field name="asd" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="background" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="content" type="javax.swing.JPanel" visibility="private" isStatic="true"/>
+        <Field name="dateText" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="header" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="home" type="javax.swing.JButton" visibility="private"/>
+        <Field name="linea" type="javax.swing.JSeparator" visibility="private"/>
+        <Field name="menu" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="regAutobus" type="javax.swing.JButton" visibility="private"/>
+        <Field name="regConductor" type="javax.swing.JButton" visibility="private"/>
+        <Field name="regEntrada" type="javax.swing.JButton" visibility="private"/>
+        <Field name="regSalida" type="javax.swing.JButton" visibility="private"/>
+        <Field name="reporte" type="javax.swing.JButton" visibility="private"/>
+        <Field name="titulo" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="InitStyles" returnType="void" visibility="private"/>
+        <Method name="SetDate" returnType="void" visibility="private"/>
+        <Method name="InitContent" returnType="void" visibility="private"/>
+        <Method name="ShowJPanel" returnType="void" visibility="public" isStatic="true">
+          <Argument type="JPanel" name="p"/>
+        </Method>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="regEntradaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="homeActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="reporteActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="regConductorActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="regAutobusActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="regSalidaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OP" package="OP" visibility="public" xPosition="1085.0" yPosition="867.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Utils" package="Utils" visibility="public" xPosition="1682.0" yPosition="2142.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="isNumeric" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="strNum"/>
+        </Method>
+        <Method name="getFechaActual" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="diferenciasDeFechas" returnType="int" visibility="public" isStatic="true" isSynchronized="true">
+          <Argument type="Date" name="fechaInicial"/>
+          <Argument type="Date" name="fechaFinal"/>
+        </Method>
+        <Method name="stringToDate" returnType="java.util.Date" visibility="public" isStatic="true" isSynchronized="true">
+          <Argument type="String" name="fecha"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="DAOAutobuses" package="com.mycompany.interfaces" visibility="public" xPosition="1837.0" yPosition="328.0">
+      <Methods>
+        <Method name="registrar" returnType="void" visibility="public">
+          <Argument type="Autobuses" name="autobus"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="public">
+          <Argument type="Autobuses" name="autobus"/>
+        </Method>
+        <Method name="eliminar" returnType="void" visibility="public">
+          <Argument type="int" name="autobusId"/>
+        </Method>
+        <Method name="listar" returnType="List&lt;Autobuses&gt;" visibility="public">
+          <Argument type="String" name="buse"/>
+        </Method>
+        <Method name="getAutobusById" returnType="Autobuses" visibility="public">
+          <Argument type="int" name="autobusId"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="DAOConductores" package="com.mycompany.interfaces" visibility="public" xPosition="822.0" yPosition="328.0">
+      <Methods>
+        <Method name="registrar" returnType="void" visibility="public">
+          <Argument type="Conductores" name="conductor"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="public">
+          <Argument type="Conductores" name="conductor"/>
+        </Method>
+        <Method name="eliminar" returnType="void" visibility="public">
+          <Argument type="int" name="conductorId"/>
+        </Method>
+        <Method name="listar" returnType="List&lt;Conductores&gt;" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getConductorById" returnType="Conductores" visibility="public">
+          <Argument type="int" name="conductorId"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="DAOReporte" package="com.mycompany.interfaces" visibility="public" xPosition="955.0" yPosition="612.0">
+      <Methods>
+        <Method name="registrar" returnType="void" visibility="public">
+          <Argument type="Reporte" name="reporte"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="public">
+          <Argument type="Reporte" name="reporte"/>
+        </Method>
+        <Method name="getReporte" returnType="Reporte" visibility="public">
+          <Argument type="Conductores" name="conductor"/>
+          <Argument type="Autobuses" name="autobus"/>
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="listar" returnType="List&lt;Reporte&gt;" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="OP.DAOReporteimpl" target="com.mycompany.db.Database"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="OP.DAOAutobusesimpl" target="com.mycompany.interfaces.DAOAutobuses"/>
+    <UseRelation source="com.mycompany.interfaces.DAOConductores" target="com.mycompany.views.Conductores" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.interfaces.DAOReporte" target="com.mycompany.views.Reporte" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="OP.DAOConductoresimpl" target="com.mycompany.views.Conductores" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="OP.DAOAutobusesimpl" target="com.mycompany.db.Database"/>
+    <IsRelation name="is" source="OP.DAOConductoresimpl" target="com.mycompany.db.Database"/>
+    <UseRelation source="OP.DAOReporteimpl" target="com.mycompany.views.Reporte" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.interfaces.DAOAutobuses" target="com.mycompany.models.Autobuses" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="OP.DAOReporteimpl" target="com.mycompany.interfaces.DAOReporte"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="OP.DAOConductoresimpl" target="com.mycompany.interfaces.DAOConductores"/>
+    <UseRelation source="OP.DAOAutobusesimpl" target="com.mycompany.models.Autobuses" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
