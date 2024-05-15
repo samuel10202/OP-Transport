@@ -10,7 +10,7 @@ public class Database {
 
     protected Connection conexion;
     private final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    private final String DB_URL = "jdbc:mysql://localhost:3306/op-transport";
+    private final String DB_URL = "jdbc:mysql://localhost:3306/op";
 
     private final String USER = "root";
     private final String PASS = "";
